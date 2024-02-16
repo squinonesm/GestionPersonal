@@ -9,8 +9,16 @@ import java.util.GregorianCalendar;
  *
  * @author Sergio Quiñones Majuelo
  * @version 0.1
- * @date 15-02-2024
+ * @date 16-02-2024
  *
+ */
+
+
+/**
+ * Clase principal que ejecuta el programa.
+ * En el cual se crean los tres tipos de empleados que existen y se trabajan
+ * con ellos, mostrando su sueldo mensual y cambiando sus horas trabajadas,
+ * complementos.
  */
 public class Run {
 
@@ -31,9 +39,9 @@ public class Run {
         System.out.println("Sueldo de " + empleadoTemporal.toString() + ", cuyo sueldo mensual es: " + empleadoTemporal.calculaSueldo());
 
         // Crear un empleado por horas
-        EmpleadoPorHoras empleadoPorHoras = new EmpleadoPorHoras(10, 40, "56789012C", "Pedro", 35);
+        EmpleadoPorHoras empleadoPorHoras = new EmpleadoPorHoras(10, 40, "56789012C", "Pedro", 35); // Suponemos que ha trabajado 40h
         System.out.println("Sueldo de " + empleadoPorHoras.toString() + ", cuyo sueldo mensual es: " + empleadoPorHoras.calculaSueldo()); // Antes de cambiar las horas trabajadas
-        empleadoPorHoras.setHorasTrabajadas(20); //Podemos cambiar las horas trabajadas
+        empleadoPorHoras.setHorasTrabajadas(20); //Podemos cambiar las horas trabajadas, aqui suponemos que ha trabajado 20h
         System.out.println("Sueldo de " + empleadoPorHoras.toString() + ", cuyo sueldo mensual es: " + empleadoPorHoras.calculaSueldo()); // Después de cambiar las horas trabajadas
         
         
