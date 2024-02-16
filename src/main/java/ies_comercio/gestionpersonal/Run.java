@@ -27,7 +27,7 @@ public class Run {
         // Crear un empleado de cada tipo
         // Crear un empleado fijo
         GregorianCalendar fechaAltaFijo = new GregorianCalendar(2020, 0, 1); // 1 de enero de 2020
-        EmpleadoFijo empleadoFijo = new EmpleadoFijo(fechaAltaFijo, 50, "12345678A", "Juan", 30);
+        EmpleadoFijo empleadoFijo = new EmpleadoFijo(fechaAltaFijo, "12345678A", "Juan", 30);
         System.out.println("Sueldo de " + empleadoFijo.toString() + ", cuyo sueldo mensual es: " + empleadoFijo.calculaSueldo()); // Antes de cambiar el complemento
         empleadoFijo.setComplementoAnual(100); //Podemos cambiar su complemento anual
         System.out.println("Sueldo de " + empleadoFijo.toString() + ", cuyo sueldo mensual es: " + empleadoFijo.calculaSueldo()); // Después de cambiar el complemento
@@ -39,9 +39,9 @@ public class Run {
         System.out.println("Sueldo de " + empleadoTemporal.toString() + ", cuyo sueldo mensual es: " + empleadoTemporal.calculaSueldo());
 
         // Crear un empleado por horas
-        EmpleadoPorHoras empleadoPorHoras = new EmpleadoPorHoras(10, 40, "56789012C", "Pedro", 35); // Suponemos que ha trabajado 40h
+        EmpleadoPorHoras empleadoPorHoras = new EmpleadoPorHoras(10, "56789012C", "Pedro", 35); // Suponemos que ha trabajado 10h
         System.out.println("Sueldo de " + empleadoPorHoras.toString() + ", cuyo sueldo mensual es: " + empleadoPorHoras.calculaSueldo()); // Antes de cambiar las horas trabajadas
-        empleadoPorHoras.setHorasTrabajadas(20); //Podemos cambiar las horas trabajadas, aqui suponemos que ha trabajado 20h
+        empleadoPorHoras.setHorasTrabajadas(20); // Podemos cambiar las horas trabajadas, aqui suponemos que ha trabajado 20h
         System.out.println("Sueldo de " + empleadoPorHoras.toString() + ", cuyo sueldo mensual es: " + empleadoPorHoras.calculaSueldo()); // Después de cambiar las horas trabajadas
         
         

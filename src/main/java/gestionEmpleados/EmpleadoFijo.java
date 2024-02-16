@@ -1,5 +1,6 @@
 package gestionEmpleados;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
@@ -15,22 +16,20 @@ import java.util.GregorianCalendar;
  */
 public class EmpleadoFijo extends Empleado {
 
-    private GregorianCalendar fechaAlta;
-    private double complementoAnual;
+    private final GregorianCalendar fechaAlta;
+    private double complementoAnual = 50;
 
     /**
      * Constructor de la clase EmpleadoFijo.
      *
      * @param fechaAlta Fecha de alta del empleado.
-     * @param complementoAnual Complemento anual del empleado.
      * @param NIF Número de identificación fiscal.
      * @param nombre Nombre del empleado.
      * @param edad Edad del empleado.
      */
-    public EmpleadoFijo(GregorianCalendar fechaAlta, double complementoAnual, String NIF, String nombre, int edad) {
+    public EmpleadoFijo(GregorianCalendar fechaAlta, String NIF, String nombre, int edad) {
         super(NIF, nombre, edad);
         this.fechaAlta = fechaAlta;
-        this.complementoAnual = 50;
     }
 
     public String getNombre() {
@@ -67,6 +66,8 @@ public class EmpleadoFijo extends Empleado {
 
     @Override
     public String toString() {
-        return "Empleado Fijo ->" + super.toString() + ", Fecha de Alta: " + fechaAlta.getTime();
+        SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
+        String fechaFormateada = formatoFecha.format(fechaAlta.getTime()); // Obtener el objeto Date de fechaAlta
+        return "Empleado Fijo -> " + super.toString() + ", Fecha de Alta: " + fechaFormateada;
     }
 }

@@ -1,5 +1,6 @@
 package gestionEmpleados;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
@@ -15,8 +16,8 @@ import java.util.GregorianCalendar;
  */
 public class EmpleadoTemporal extends Empleado {
 
-    private GregorianCalendar fechaAlta;
-    private GregorianCalendar fechaBaja;
+    private final GregorianCalendar fechaAlta;
+    private final GregorianCalendar fechaBaja;
 
     /**
      * Constructor de la clase EmpleadoTemporal.
@@ -42,7 +43,7 @@ public class EmpleadoTemporal extends Empleado {
         int diferenciaTotalEnMeses = añosDiferencia * 12 + mesesDiferencia;
 
         return Empleado.salarioMinimo * diferenciaTotalEnMeses;
-    }*/
+    }/*
     
     
     /**
@@ -57,7 +58,11 @@ public class EmpleadoTemporal extends Empleado {
 
     @Override
     public String toString() {
-        return "Empleado Temporal -> " + super.toString() + ", Fecha de Alta: " + fechaAlta.getTime() + ", Fecha de Baja: " + fechaBaja.getTime();
+        SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
+        String fechaAltaFormateada = formatoFecha.format(fechaAlta.getTime());
+        String fechaBajaFormateada = formatoFecha.format(fechaBaja.getTime());
+
+        return "Empleado Temporal -> " + super.toString() + ", Fecha de Alta: " + fechaAltaFormateada + ", Fecha de Baja: " + fechaBajaFormateada;
     }
 
 }

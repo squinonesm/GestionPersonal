@@ -12,24 +12,22 @@ package gestionEmpleados;
  */
 public class EmpleadoPorHoras extends Empleado {
 
-    private final double precioHoraTrabajada;
+    private final double precioHoraTrabajada = 10; //Establecemos un precio hora igual para todos
     private int horasTrabajadas;
 
     /**
      * Constructor de la clase EmpleadoPorHoras.
      *
-     * @param precioHoraTrabajada Precio por hora trabajada.
      * @param horasTrabajadas Horas trabajadas por el empleado.
      * @param NIF Número de identificación fiscal.
      * @param nombre Nombre del empleado.
      * @param edad Edad del empleado.
      */
-    public EmpleadoPorHoras(double precioHoraTrabajada, int horasTrabajadas, String NIF, String nombre, int edad) {
+    public EmpleadoPorHoras(int horasTrabajadas, String NIF, String nombre, int edad) {
         super(NIF, nombre, edad);
-        this.precioHoraTrabajada = precioHoraTrabajada;
         this.horasTrabajadas = horasTrabajadas;
     }
-
+    
     public void setHorasTrabajadas(int horasTrabajadas) {
         this.horasTrabajadas = horasTrabajadas;
     }
