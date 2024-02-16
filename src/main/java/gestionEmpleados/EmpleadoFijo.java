@@ -10,7 +10,7 @@ import java.util.GregorianCalendar;
  * @date 15-02-2024
  *
  */
-public abstract class EmpleadoFijo extends Empleado {
+public class EmpleadoFijo extends Empleado {
 
     private GregorianCalendar fechaAlta;
     private double complementoAnual;
@@ -21,6 +21,11 @@ public abstract class EmpleadoFijo extends Empleado {
         this.complementoAnual = complementoAnual;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+    
+
     public double getComplementoAnual() {
         return complementoAnual;
     }
@@ -28,6 +33,7 @@ public abstract class EmpleadoFijo extends Empleado {
     public void setComplementoAnual(double complementoAnual) {
         this.complementoAnual = complementoAnual;
     }
+    
     
     private int añosAntiguedad(){
         Calendar calendar = new GregorianCalendar();
@@ -39,5 +45,9 @@ public abstract class EmpleadoFijo extends Empleado {
     public double calculaSueldo() {
         return Empleado.salarioMinimo+(complementoAnual*añosAntiguedad());
     }
-
+    
+    @Override
+    public String toString() {
+        return "Empleado Fijo ->" + super.toString() + ", Fecha de Alta: " + fechaAlta.getTime();
+    }
 }
